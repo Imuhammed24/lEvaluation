@@ -1,6 +1,50 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_style %}
+<style>{% include 'home-style.html' %}</style>
+
+<script>
+     $("#login-button").click(function(event){
+         event.preventDefault();
+
+     $('form').fadeOut(500);
+     $('.wrapper').addClass('form-success');
+});
+</script>
+{% endblock %}
+
+
 {% block base_content %}
+
+
+
+<div class="wrapper">
+    <div class="login login-container">
+        <img src="https://www.futminna.edu.ng/images/futminna_logo.jpg" alt="">
+    <h1>Login</h1>
+    <form action="{% url 'account:login_user' %}" method="POST">
+        {% csrf_token %}
+<!--        <input type="text" name="username" placeholder="Username" required="required" />-->
+<!--        <input type="password" name="password" placeholder="Password" required="required" />-->
+        {{ login_form }}
+        <button id="login-btn" type="submit" class="font-weight-bold">Let me in.</button>
+    </form>
+</div>
+
+<ul class="bg-bubbles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</div>
+
 
 {% endblock %}
