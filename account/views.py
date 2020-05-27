@@ -16,24 +16,32 @@ def login_view(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return HttpResponse('Logged in')
+                    return redirect('account:home')
                 else:
                     return HttpResponse('Disabled Account')
             else:
                 return HttpResponse('Invalid Login')
     return HttpResponse('No post')
 
+#
+# @login_required
+# def account_view(request):
+#     context = {
+#         'display_section': 'dashboard',
+#                }
+#     return render(request, 'account_base.html', context)
+#
+
 
 @login_required
-def account_view(request):
+def home_view(request):
     context = {
-        'display_section': 'dashboard',
-               }
-    return render(request, 'account_base.html', context)
+        'display_section': 'Dashboard',
+    }
+    return render(request, 'account/dashboard.html', context)
 
 
 @login_required
 def logout_view(request):
     logout(request)
     return redirect('account:login_view')
-

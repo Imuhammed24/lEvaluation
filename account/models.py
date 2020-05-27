@@ -12,11 +12,17 @@ class Profile(models.Model):
         ('computer science', 'Computer Science'),
         ('information and media technology', 'Information and Media Technology'),
     )
-
+    LEVEL = (
+        (100, '100'),
+        (200, '200'),
+        (300, '300'),
+        (400, '400'),
+        (500, '500'),
+    )
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
     # department = models.CharField(max_length=40, choices=DEPARTMENTS, null=True, blank=True)
-    department = models.OneToOneField(Department, on_delete=models.CASCADE, null=True, blank=True)
-    level = models.IntegerField(blank=True, null=True)
+    department = models.ManyToManyField(Department, blank=True)
+    level = models.IntegerField(choices=LEVEL, blank=True, null=True)
 
     def __str__(self):
         return f'{self.user.username}'
