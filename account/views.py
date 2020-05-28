@@ -5,6 +5,8 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from account.forms import LoginForm
+from account.models import Profile
+from faculty.models import Course
 
 
 def login_view(request):
@@ -38,6 +40,14 @@ def home_view(request):
     context = {
         'display_section': 'Dashboard',
     }
+    # test = Course.objects.get(level_offering=500)
+    # print([test.name for test in test.departments_offering.all()])
+    if not request.user.is_staff:
+        # user_profile = Profile.objects.get(user=request.user)
+        courses = Course.objects.filter(departments_offering__in=request.user.profile.department.all(),
+                                        level_offering=request.user.profile.level)
+        context['courses'] = courses
+
     return render(request, 'account/dashboard.html', context)
 
 

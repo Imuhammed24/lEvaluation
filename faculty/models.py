@@ -22,8 +22,12 @@ class Course(models.Model):
     )
 
     title = models.CharField(max_length=30)
-    lecturer = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='courses', limit_choices_to={'is_staff': True})
-    departments_offering = models.ManyToManyField(Department, blank=True, related_name='department_offering')
+    lecturer = models.ForeignKey(User,
+                                 on_delete=models.CASCADE,
+                                 null=True,
+                                 related_name='courses',
+                                 limit_choices_to={'is_staff': True})
+    departments_offering = models.ManyToManyField(Department, blank=True, related_name='courses')
     level_offering = models.IntegerField(choices=LEVEL, null=True, blank=True)
 
     def __str__(self):
