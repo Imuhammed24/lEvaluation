@@ -23,6 +23,7 @@ class Profile(models.Model):
     # department = models.CharField(max_length=40, choices=DEPARTMENTS, null=True, blank=True)
     department = models.ManyToManyField(Department, blank=True)
     level = models.IntegerField(choices=LEVEL, blank=True, null=True)
+    profile_photo = models.ImageField(upload_to='profile_pictures/', blank=True)
 
     def __str__(self):
         return f'{self.user.username}'
