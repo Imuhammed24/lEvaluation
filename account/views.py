@@ -48,7 +48,14 @@ def home_view(request):
                                         level_offering=request.user.profile.level)
         context['courses'] = courses
 
-    return render(request, 'account/dashboard.html', context)
+    if request.user.is_superuser:
+        template = 'account/dashboards/admin_dashboard.html'
+    elif request.user.is_staff:
+        template = 'account/dashboards/staff_dashboard.html'
+    else:
+        template = 'account/dashboards/student_dashboard.html'
+
+    return render(request, template, context)
 
 
 @login_required

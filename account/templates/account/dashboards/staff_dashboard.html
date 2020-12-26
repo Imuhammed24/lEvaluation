@@ -1,0 +1,71 @@
+{% extends 'account/admin_dashboard.html' %}
+{% load static %}
+
+{% block aside_list_li %}
+    <li class="mt">
+    <a class="active" href="index.html">
+      <i class="fa fa-dashboard"></i>
+      <span>Dashboard</span>
+      </a>
+    </li>
+<!--    <li class="sub-menu">-->
+<!--    <a href="javascript:;">-->
+<!--      <i class="fa fa-desktop"></i>-->
+<!--      <span>Previous Assessment</span>-->
+<!--      </a>-->
+<!--    </li>-->
+<!--    <li class="sub-menu">-->
+<!--    <a href="javascript:;">-->
+<!--      <i class="fa fa-cogs"></i>-->
+<!--      <span>Report</span>-->
+<!--      </a>-->
+<!--    </li>-->
+<!--    <li class="sub-menu">-->
+<!--    <a href="javascript:;">-->
+<!--      <i class="fa fa-book"></i>-->
+<!--      <span>Results</span>-->
+<!--      </a>-->
+<!--    </li>-->
+<!--    <li class="sub-menu">-->
+<!--    <a href="javascript:;">-->
+<!--      <i class="fa fa-tasks"></i>-->
+<!--      <span>Information</span>-->
+<!--      </a>-->
+<!--    </li>-->
+{% endblock %}
+
+
+{% block body_section_section %}
+<section class="wrapper">
+<h1>Staff</h1>
+<div class="row">
+  <div class="col-lg-9 main-chart">
+    {% if not request.user.is_staff %}
+    <div class="border-head">
+      <h3>Lecturers</h3>
+    </div>
+
+    <div class="overflow-hidden clear">
+      <div class="container">
+        <div class="row">
+          {% for course in courses %}
+          <div class="col-sm-2">
+            <div class="card" style="width: 18rem;">
+              <img src="{{ course.lecturer.profile.profile_photo.url }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h4 class="card-title font-weight-bold">{{ course.lecturer.first_name }} {{ course.lecturer.last_name }}</h4>
+                <p class="card-text">{{course.title}}</p>
+                <a class="btn btn-dark text-white">Evaluate</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  <!-- /col-lg-9 END SECTION MIDDLE -->
+</div>
+</section>
+{% endblock %}
