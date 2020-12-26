@@ -21,7 +21,7 @@
 
 <div class="wrapper">
     <div class="login login-container">
-        <img src="https://www.futminna.edu.ng/images/futminna_logo.jpg" alt="">
+        <img src="{% static 'img/Futminna_logo.jpg' %}" class="mb-3" alt="FUTMinna">
     <h1>Login</h1>
     <form action="{% url 'account:login_user' %}" method="POST">
         {% csrf_token %}
