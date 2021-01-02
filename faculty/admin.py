@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from faculty.models import Faculty, Department, Course
+from faculty.models import Faculty, Department, Course, CurrentSemester
 
 
 class DepartmentAdmin(admin.ModelAdmin):
@@ -19,3 +19,4 @@ class CourseAdmin(admin.ModelAdmin):
 admin.site.register(Department, DepartmentAdmin)
 admin.site.register(Faculty, FacultyAdmin)
 admin.site.register(Course, CourseAdmin)
+admin.site.register(CurrentSemester)

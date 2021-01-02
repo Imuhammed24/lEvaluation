@@ -51,7 +51,7 @@ def home_view(request):
 
     if not request.user.is_staff:
         # user_profile = Profile.objects.get(user=request.user)
-        courses = Course.objects.filter(departments_offering__in=request.user.profile.department.all(),
+        courses = Course.objects.filter(departments_offering__in=[request.user.profile.department],
                                         level_offering=request.user.profile.level)
         context['courses'] = courses
 

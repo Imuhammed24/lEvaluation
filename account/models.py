@@ -25,7 +25,7 @@ class Profile(models.Model):
         (500, '500'),
     )
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
-    department = models.ManyToManyField(Department, blank=True)
+    department = models.ForeignKey(Department, blank=True, on_delete=models.CASCADE, null=True)
     level = models.IntegerField(choices=LEVEL, blank=True, null=True)
     profile_photo = models.ImageField(upload_to='profile_pictures/', blank=True)
 
