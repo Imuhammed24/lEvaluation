@@ -13,14 +13,13 @@ class Semester(models.Model):
     year = models.IntegerField()
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.name} {self.year}'
 
 
 class Assessment(models.Model):
     """
     Assessment's model, works as a wrapper for the questions
     """
-    name = models.CharField(max_length=64, verbose_name=u'Exam name')
     lecturer = models.ForeignKey(User,
                                  on_delete=models.CASCADE,
                                  related_name='students_assessments',
@@ -30,7 +29,7 @@ class Assessment(models.Model):
 
 
     def __str__(self):
-        return f'{self.name} ({self.lecturer}: {self.course})'
+        return f'({self.lecturer.first_name} {self.lecturer.last_name}: {self.course})'
 
 
 class Question(models.Model):

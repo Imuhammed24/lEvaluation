@@ -3,7 +3,7 @@
 
 {% block aside_list_li %}
     <li class="mt">
-    <a class="active" href="index.html">
+    <a class="active" href="{% url 'account:home' %}">
       <i class="fa fa-dashboard"></i>
       <span>Dashboard</span>
       </a>
@@ -53,16 +53,44 @@
             <div class="card" style="width: 18rem;">
               <img src="{% if course.lecturer.profile.profile_photo %}{{ course.lecturer.profile.profile_photo.url }}{% else %}{% static 'img/default_profile_img.svg' %}{% endif %}" height="120px" width="120px" class="card-img-top" alt="...">
               <div class="card-body">
+                <center>
                 <h5 class="card-title font-weight-bold">{{ course.lecturer.first_name }} {{ course.lecturer.last_name }}</h5>
                 <p class="">{{course.title}}</p>
-                <small class="d-block mb-1">{{course.code}}</small>
-                <a class="btn btn-dark text-white">Evaluate</a>
+                <small class="d-block mb-1">{{course.code}} <span class="text-success">{% if course in assessed_courses %}(Evaluated){% endif %}</span></small>
+                <a class="btn btn-dark {% if course in assessed_courses %}disabled{% endif %} text-white">Evaluate</a>
+                </center>
               </div>
             </div>
           </div>
           {% endfor %}
+
+
         </div>
       </div>
+      {% if request.user.extra_courses %}
+      <div class="mt-5">
+        <div class="border-head">
+          <h3>Extra Courses ({{request.user.extra_courses.courses.count}})</h3>
+        </div>
+        {% with courses=request.user.extra_courses %}
+        {% for course in courses.courses.all %}
+          <div class="mr-3">
+            <div class="card" style="width: 18rem;">
+              <img src="{% if course.lecturer.profile.profile_photo %}{{ course.lecturer.profile.profile_photo.url }}{% else %}{% static 'img/default_profile_img.svg' %}{% endif %}" height="120px" width="120px" class="card-img-top" alt="...">
+              <div class="card-body">
+                <center>
+                <h5 class="card-title font-weight-bold">{{ course.lecturer.first_name }} {{ course.lecturer.last_name }}</h5>
+                <p class="">{{ course.title }}</p>
+                <small class="d-block mb-1">{{course.code}} <span class="text-success">{% if course in assessed_courses %}(Evaluated){% endif %}</span></small>
+                <a class="btn btn-dark {% if course in assessed_courses %}disabled{% endif %} text-white">Evaluate</a>
+                </center>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        {% endwith %}
+      </div>
+      {% endif %}
     </div>
     {% endif %}
   </div>

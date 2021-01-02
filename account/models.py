@@ -6,7 +6,8 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-from faculty.models import Department
+from assessment.models import Assessment
+from faculty.models import Department, Course
 
 
 class Profile(models.Model):
@@ -37,3 +38,19 @@ def update_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
         instance.profile.save()
+
+
+class ExtraCourses(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='extra_courses')
+    courses = models.ManyToManyField(Course)
+
+    def __str__(self):
+        return f'{self.user}: extra course'
+
+
+class AssessedCourses(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='assessed_courses')
+    assessment = models.ForeignKey(Assessment, on_delete=models.CASCADE, related_name='assessed_students')
+
+    def __str__(self):
+        return f'{self.user}: >>> {self.assessment.course}'

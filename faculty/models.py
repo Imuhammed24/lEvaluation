@@ -31,7 +31,7 @@ class Course(models.Model):
     level_offering = models.IntegerField(choices=LEVEL, null=True, blank=True)
 
     def __str__(self):
-        return f'{self.title}'
+        return f'{self.title}({self.code})'
 
 
 class Faculty(models.Model):
@@ -43,3 +43,18 @@ class Faculty(models.Model):
 
     class Meta:
         verbose_name_plural = 'Faculties'
+
+
+SEMESTER = (
+    ('FIRST SEMESTER', 'FIRST SEMESTER'),
+    ('SECOND SEMESTER', 'SECOND SEMESTER')
+)
+
+
+class CurrentSemester(models.Model):
+    faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
+    name = models.CharField(max_length=20, choices=SEMESTER)
+    year = models.IntegerField()
+
+    def __str__(self):
+        return f'{self.name} {self.year}'

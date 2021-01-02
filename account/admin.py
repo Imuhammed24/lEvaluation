@@ -1,5 +1,5 @@
 from django.contrib import admin
-from account.models import Profile
+from account.models import Profile, ExtraCourses, AssessedCourses
 from django.contrib.auth.admin import UserAdmin as AuthUserAdmin, User
 
 
@@ -19,3 +19,7 @@ admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
 
 admin.site.register(Profile)
+
+admin.site.register(ExtraCourses)
+
+admin.site.register(AssessedCourses)

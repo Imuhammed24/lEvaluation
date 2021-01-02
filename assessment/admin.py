@@ -13,7 +13,7 @@ class ViewAdmin(ImportExportModelAdmin):
 
 @admin.register(Assessment)
 class ViewAdmin(ImportExportModelAdmin):
-    list_display = ['name', 'lecturer', 'course', 'semester']
+    list_display = ['lecturer', 'course', 'semester']
 
 
 @admin.register(Question)
