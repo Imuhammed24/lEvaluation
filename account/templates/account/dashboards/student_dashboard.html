@@ -37,7 +37,7 @@
 
 {% block body_section_section %}
 <section class="wrapper">
-<h1>Student</h1>
+<h3 class="font-weight-bold">STUDENT DASHBOARD</h3>
 <div class="row">
   <div class="col-lg-9 main-chart">
     {% if not request.user.is_staff %}
@@ -49,12 +49,13 @@
       <div class="container">
         <div class="row">
           {% for course in courses %}
-          <div class="col-sm-2">
+          <div class="mr-3">
             <div class="card" style="width: 18rem;">
-              <img src="{{ course.lecturer.profile.profile_photo.url }}" class="card-img-top" alt="...">
+              <img src="{% if course.lecturer.profile.profile_photo %}{{ course.lecturer.profile.profile_photo.url }}{% else %}{% static 'img/default_profile_img.svg' %}{% endif %}" height="120px" width="120px" class="card-img-top" alt="...">
               <div class="card-body">
-                <h4 class="card-title font-weight-bold">{{ course.lecturer.first_name }} {{ course.lecturer.last_name }}</h4>
-                <p class="card-text">{{course.title}}</p>
+                <h5 class="card-title font-weight-bold">{{ course.lecturer.first_name }} {{ course.lecturer.last_name }}</h5>
+                <p class="">{{course.title}}</p>
+                <small class="d-block mb-1">{{course.code}}</small>
                 <a class="btn btn-dark text-white">Evaluate</a>
               </div>
             </div>
@@ -68,4 +69,4 @@
   <!-- /col-lg-9 END SECTION MIDDLE -->
 </div>
 </section>
-{% endblock %
+{% endblock %}

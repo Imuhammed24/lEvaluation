@@ -51,7 +51,7 @@
           {% for course in courses %}
           <div class="col-sm-2">
             <div class="card" style="width: 18rem;">
-              <img src="{{ course.lecturer.profile.profile_photo.url }}" class="card-img-top" alt="...">
+              <img src="{% if course.lecturer.profile.profile_photo %}{{ course.lecturer.profile.profile_photo.url }}{% else %}{% static 'img/default_profile_img.svg' %}{% endif %}" class="card-img-top" alt="...">
               <div class="card-body">
                 <h4 class="card-title font-weight-bold">{{ course.lecturer.first_name }} {{ course.lecturer.last_name }}</h4>
                 <p class="card-text">{{course.title}}</p>

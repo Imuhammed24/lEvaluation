@@ -15,6 +15,8 @@ def login_view(request):
         if form.is_valid():
             cd = form.cleaned_data
             user = authenticate(username=cd['username'], password=cd['password'])
+            if not user:
+                user = authenticate(username=cd['username'].title(), password=cd['password'])
             if user is not None:
                 if user.is_active:
                     login(request, user)

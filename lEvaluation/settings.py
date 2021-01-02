@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'faculty',
-    'account'
+    'assessment',
+    'account',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +60,9 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'account/templates'),
+            os.path.join(BASE_DIR, 'assessment/templates'),
+            os.path.join(BASE_DIR, 'faculty/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {

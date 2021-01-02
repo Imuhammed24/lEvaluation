@@ -37,8 +37,9 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <img src="{% static 'img/default_profile_img.svg' %}" class="ml-2 p-1 img-circle" width="35" height="35">
-          <h5 class="centered d-inline mt-1">{{ request.user.username.title}}</h5>
+          <img src="{% if request.user.profile.profile_photo %}{{ request.user.profile.profile_photo.url }}{% else %}{% static 'img/default_profile_img.svg' %}{% endif %}" class="ml-2 p-1 img-circle" width="35" height="35">
+          <h5 class="centered d-inline mt-1">{{ request.user.first_name.title}}</h5>
+          <h5 class="small ml-3 mt-3 d-block"><span class="text-primary">Department:</span> {{ request.user.profile.department.name }}</h5>
           {% block aside_list_li %}
           {% endblock %}
         </ul>

@@ -1,6 +1,3 @@
-cyberuser1 -- users12345
-
-
 # from django.db import models
 
 # class Exam(models.Model):
