@@ -11,5 +11,8 @@ def evaluate_view(request, staff_id, course_id, semester_id):
     semester = CurrentSemester.objects.get(id=semester_id)
     real_semester = Semester.objects.get(name=semester.name, year=semester.year)
     assessment = Assessment.objects.get(lecturer=staff, course=course, semester=real_semester)
-    print(assessment)
-    return render(request, 'index.html')
+    context = {
+        'section': 'assessment',
+        'assessment': assessment,
+    }
+    return render(request, 'assessment/assessment.html', context)

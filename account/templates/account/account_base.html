@@ -18,10 +18,13 @@
       <!--logo end-->
       <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
+        {% if section == 'assessment' %}
+        <h4 class="d-inline text-white font-weight-bold">LECTURER ASSESSMENT</h4>
+        {% endif %}
         <!--  notification end -->
       </div>
       <div class="top-menu">
-        <ul class="nav pull-right top-menu">
+        <ul class="nav d-inline pull-right top-menu">
           <li><a class="logout" href="{% url 'account:logout' %}">Logout</a></li>
         </ul>
       </div>
