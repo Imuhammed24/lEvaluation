@@ -36,6 +36,11 @@
 
 
 {% block body_section_section %}
+{% if messages %}
+    {% for message in messages %}
+     {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+    {% endfor %}
+{% endif %}
 <section class="wrapper">
 <h3 class="font-weight-bold">STUDENT DASHBOARD</h3>
 <div class="row">

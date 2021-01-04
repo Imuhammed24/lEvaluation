@@ -16,20 +16,21 @@
 <h3 class="font-weight-bold"><span class="text-primary">WELCOME!</span> You are evaluating; <span style="text-decoration: underline">{{assessment.lecturer.first_name.title}} {{assessment.lecturer.last_name.title}}</span></h3>
 <hr>
 <div>
-    <form class="ml-5" action="">
+    <form class="ml-5" method="post" action="{% url 'assessment:add_answers' assessment.id %}">
+    {% csrf_token %}
     {% for question in assessment.questions.all %}
     <div class="mb-5">
         <h4><span class="mr-5">{{forloop.counter}}.</span>{{ question.question_text }}?</h4>
         <div class="ml-5">
-          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-SA" name="Strongly Agree" value="Strongly Agree">
+          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-SA" name="{{question.id}}" value="Strongly Agree">
           <label for="question-{{forloop.counter}}-SA"> Strongly Agree</label><br>
-          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-A" name="Agree" value="Agree">
+          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-A" name="{{question.id}}" value="Agree">
           <label for="question-{{forloop.counter}}-A"> Agree</label><br>
-          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-N" name="Neutral" value="Neutral">
+          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-N" name="{{question.id}}" value="Neutral">
           <label for="question-{{forloop.counter}}-N"> Neutral</label><br>
-          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-D" name="Disagree" value="Disagree">
+          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-D" name="{{question.id}}" value="Disagree">
           <label for="question-{{forloop.counter}}-D"> Disagree</label><br>
-          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-SD" name="Strongly Disagree" value="Strongly Disagree">
+          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-SD" name="{{question.id}}" value="Strongly Disagree">
           <label for="question-{{forloop.counter}}-SD"> Strongly Disagree</label><br>
         </div>
     </div>
