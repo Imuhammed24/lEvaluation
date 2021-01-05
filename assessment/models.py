@@ -8,6 +8,7 @@ SEMESTER = (
     ('SECOND SEMESTER', 'SECOND SEMESTER')
 )
 
+
 class Semester(models.Model):
     name = models.CharField(max_length=20, choices=SEMESTER)
     year = models.IntegerField()

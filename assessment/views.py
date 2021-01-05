@@ -34,3 +34,22 @@ def add_answers_view(request, assessment_id):
             if count > 14:
                 messages.success(request, "Response Added Successfully!")
     return redirect('account:home')
+
+
+def lecturer_result_view(request, course_id, semester_id):
+    course = Course.objects.get(id=course_id)
+    semester = CurrentSemester.objects.get(id=semester_id)
+    real_semester = Semester.objects.get(name=semester.name, year=semester.year)
+    assessment = Assessment.objects.get(lecturer=request.user, course=course, semester=real_semester)
+    questions = Question.objects.filter(exam=assessment)
+
+    for question in questions:
+        answers = question.anserrs.all()
+        
+
+    context = {
+        'section': 'lecturer_result_view',
+        'course': course,
+        'questions': questions,
+    }
+    return render(request, 'assessment/lecturer_assessment_result.html', context=context)

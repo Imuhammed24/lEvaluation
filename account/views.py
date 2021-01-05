@@ -54,6 +54,9 @@ def home_view(request):
         courses = Course.objects.filter(departments_offering__in=[request.user.profile.department],
                                         level_offering=request.user.profile.level)
         context['courses'] = courses
+    else:
+        courses = request.user.courses.all()
+        context['courses'] = courses
 
     if request.user.is_superuser:
         template = 'account/dashboards/admin_dashboard.html'
