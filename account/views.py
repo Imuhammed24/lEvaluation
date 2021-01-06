@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from account.forms import LoginForm
 from account.models import Profile
-from faculty.models import Course
+from faculty.models import Course, Faculty
 
 
 def login_view(request):
@@ -54,9 +54,14 @@ def home_view(request):
         courses = Course.objects.filter(departments_offering__in=[request.user.profile.department],
                                         level_offering=request.user.profile.level)
         context['courses'] = courses
-    else:
+
+    elif request.user.is_staff and  not request.user.is_superuser:
         courses = request.user.courses.all()
         context['courses'] = courses
+
+    else:
+        faculties = Faculty.objects.all()
+        context['faculties'] = faculties
 
     if request.user.is_superuser:
         template = 'account/dashboards/admin_dashboard.html'

@@ -16,7 +16,7 @@ class Faculty(models.Model):
 class Department(models.Model):
     name = models.CharField(max_length=40)
     lecturers = models.ManyToManyField(User, related_name='department', blank=True, limit_choices_to={'is_staff': True})
-    faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE, null=True, blank=True)
+    faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE, related_name='departments', null=True, blank=True)
 
     def __str__(self):
         return f'{self.name}'
@@ -40,6 +40,7 @@ class Course(models.Model):
                                  related_name='courses',
                                  limit_choices_to={'is_staff': True})
     departments_offering = models.ManyToManyField(Department, blank=True, related_name='courses')
+    department_owned = models.ForeignKey(Department, null=True, blank=True, on_delete=models.CASCADE, related_name='department_courses')
     level_offering = models.IntegerField(choices=LEVEL, null=True, blank=True)
 
     def __str__(self):

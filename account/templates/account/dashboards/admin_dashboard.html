@@ -1,5 +1,6 @@
 {% extends 'account/account_base.html' %}
 {% load static %}
+{% load process_general_lecturers_result %}
 
 {% block aside_list_li %}
     <li class="mt">
@@ -37,7 +38,50 @@
 
 {% block body_section_section %}
 <section class="wrapper">
-<h1>Admin</h1>
+    <div>
+        <h3 class="bold mb-5">Faculties and Departments</h3>
+        <hr>
+        <div>
+            {% for faculty in faculties %}
+                <h4 class="font-weight-bold text-primary">{{ faculty.name.upper }} <span class="text-dark">(Courses)</span></h4>
 
+                <ul>
+                    {% for department in faculty.departments.all %}
+                    <li>
+
+                        <table class="table table-hover table-bordered table-dark">
+                            <caption class="font-weight-bold text-dark" style="caption-side: top">{{ department.name.title }}</caption>
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">Course Title</th>
+                              <th scope="col">Course Code</th>
+                              <th scope="col">Semester</th>
+                              <th scope="col">Overall Performance</th>
+                              <th scope="col">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {% for course in department.department_courses.all %}
+                            <tr>
+                              <th scope="row">{{forloop.counter}}</th>
+                              <td>{{course.lecturer.first_name.title}} {{course.lecturer.last_name.title}}</td>
+                              <td>{{course.title.title}}</td>
+                              <td>{{course.code.upper}}</td>
+                              <td>{{ request.user.profile.department.faculty.current_semester.first }}</td>
+                              <td>{% get_lecturer_performance course request.user.profile.department.faculty.current_semester.first %}</td>
+                              <td><a class="btn btn-primary" href="">View Detail</a></td>
+                            </tr>
+                          {% endfor %}
+                          </tbody>
+                        </table>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+            {% endfor %}
+        </div>
+    </div>
 </section>
 {% endblock %}
