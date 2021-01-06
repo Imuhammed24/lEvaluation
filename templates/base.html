@@ -43,8 +43,30 @@
         if (all_overall_score[i].textContent === 'poor'){
             all_overall_score[i].classList.add('bg-danger');
         }
-    }
 
+    }
+</script>
+{% endif %}
+
+{% if request.user.is_superuser %}
+<script>
+     let all_overall_performance = document.querySelectorAll('.overall_performance_container')
+    for(let i=0; i<=all_overall_performance.length-1; i++){
+        if (all_overall_performance[i].textContent === 'good'){
+            all_overall_performance[i].classList.add('bg-success');
+        }
+        if (all_overall_performance[i].textContent === 'neutral'){
+            all_overall_performance[i].classList.add('bg-light');
+        }
+        if (all_overall_performance[i].textContent === 'poor'){
+            all_overall_performance[i].classList.add('bg-danger');
+        }
+        if (all_overall_performance[i].textContent === 'Not yet assessed'){
+            let btn_class = 'btn_after_overall_performance';
+            let id = all_overall_performance[i].id;
+            document.getElementById(btn_class.concat(id)).classList.add('disabled');
+        }
+    }
 </script>
 {% endif %}
 </body>

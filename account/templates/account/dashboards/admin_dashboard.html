@@ -70,8 +70,8 @@
                               <td>{{course.title.title}}</td>
                               <td>{{course.code.upper}}</td>
                               <td>{{ request.user.profile.department.faculty.current_semester.first }}</td>
-                              <td>{% get_lecturer_performance course request.user.profile.department.faculty.current_semester.first %}</td>
-                              <td><a class="btn btn-primary" href="">View Detail</a></td>
+                              <td id="{{course.id}}" class="overall_performance_container">{% get_lecturer_performance course request.user.profile.department.faculty.current_semester.first %}</td>
+                              <td><a id="btn_after_overall_performance{{course.id}}" class="btn btn-primary" href="{% url 'assessment:lecturer_result_view' course.id request.user.profile.department.faculty.current_semester.first.id %}">View Detail</a></td>
                             </tr>
                           {% endfor %}
                           </tbody>

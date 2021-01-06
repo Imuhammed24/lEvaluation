@@ -40,7 +40,7 @@ def lecturer_result_view(request, course_id, semester_id):
     course = Course.objects.get(id=course_id)
     semester = CurrentSemester.objects.get(id=semester_id)
     real_semester = Semester.objects.get(name=semester.name, year=semester.year)
-    assessment = Assessment.objects.get(lecturer=request.user, course=course, semester=real_semester)
+    assessment = Assessment.objects.get(lecturer=course.lecturer, course=course, semester=real_semester)
     questions = Question.objects.filter(exam=assessment)
 
     context = {
