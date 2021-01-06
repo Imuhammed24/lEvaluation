@@ -62,7 +62,7 @@
                 <h5 class="card-title font-weight-bold">{{ course.lecturer.first_name }} {{ course.lecturer.last_name }}</h5>
                 <p class="">{{course.title}}</p>
                 <small class="d-block mb-1">{{course.code}} <span class="text-success">{% if course in assessed_courses %}(Evaluated){% endif %}</span></small>
-                <a href="{% url 'assessment:evaluate' course.lecturer.id course.id, request.user.profile.department.faculty.current_semester.first.id %}" class="btn btn-dark {% if course in assessed_courses %}disabled{% endif %} text-white">Evaluate</a>
+                <a href="{% url 'assessment:evaluate' course.lecturer.id course.id request.user.profile.department.faculty.current_semester.first.id %}" class="btn btn-dark {% if course in assessed_courses %}disabled{% endif %} text-white">Evaluate</a>
                 </center>
               </div>
             </div>

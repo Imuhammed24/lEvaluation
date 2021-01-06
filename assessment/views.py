@@ -43,13 +43,10 @@ def lecturer_result_view(request, course_id, semester_id):
     assessment = Assessment.objects.get(lecturer=request.user, course=course, semester=real_semester)
     questions = Question.objects.filter(exam=assessment)
 
-    for question in questions:
-        answers = question.anserrs.all()
-        
-
     context = {
         'section': 'lecturer_result_view',
         'course': course,
         'questions': questions,
+        'assessment': assessment,
     }
     return render(request, 'assessment/lecturer_assessment_result.html', context=context)

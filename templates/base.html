@@ -30,5 +30,22 @@
 <body>
 {% block base_content %}
 {% endblock %}
+{% if section == 'lecturer_result_view' %}
+<script type="text/javascript">
+    let all_overall_score = document.querySelectorAll('.overall-score-class')
+    for(let i=0; i<=all_overall_score.length; i++){
+        if (all_overall_score[i].textContent === 'good'){
+            all_overall_score[i].classList.add('bg-success');
+        }
+        if (all_overall_score[i].textContent === 'neutral'){
+            all_overall_score[i].classList.add('bg-light');
+        }
+        if (all_overall_score[i].textContent === 'poor'){
+            all_overall_score[i].classList.add('bg-danger');
+        }
+    }
+
+</script>
+{% endif %}
 </body>
 </html>

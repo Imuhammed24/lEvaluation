@@ -14,3 +14,14 @@
   font-weight: 300;
   src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v13/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdr.ttf) format('truetype');
 }
+
+.course-in-result{
+  background-color: #e2e2e2;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#assessment_result_page_thead tr{
+  background-color: black;
+  color: white;
+}

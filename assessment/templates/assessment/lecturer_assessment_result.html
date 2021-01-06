@@ -2,10 +2,11 @@
 
 {% extends 'account/account_base.html' %}
 {% load static %}
+{% load process_lecturer_result %}
 
 {% block aside_list_li %}
     <li class="mt">
-    <a class="active" href="index.html">
+    <a class="active" href="{% url 'account:home' %}">
       <i class="fa fa-dashboard"></i>
       <span>Dashboard</span>
       </a>
@@ -39,46 +40,40 @@
 
 {% block body_section_section %}
 <section class="wrapper">
-<h3 class="font-weight-bold">ASSESSMENT RESULT</h3>
+<h3 class="font-weight-bold course-in-result d-inline p-2" style="">Course: <span class="text-primary">{{course.code}}</span></h3>
 <div class="row">
-  <div class="col-lg-11 main-chart">
+  <div class="col-lg-11 mt-3 main-chart">
     {% if request.user.is_staff %}
-    <div class="border-head">
-      <h4>Course: </h4>
-    </div>
 
     <div class="overflow-hidden clear">
       <div class="">
 
           <table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+          <thead id="assessment_result_page_thead">
+            <tr>
+              <th scope="col">Questions</th>
+              <th scope="col">Strongly_Agree</th>
+              <th scope="col">Agree</th>
+              <th scope="col">Neutral</th>
+              <th scope="col">Disagree</th>
+              <th scope="col">Strongly_Disagree</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for question in questions %}
+              <tr>
+                <th style="font-size: 15px" scope="row">> {{ question.question_text }}</th>
+                <td class="text-center bg-success">{% get_sa_count question %}</td>
+                <td class="text-center bg-info">{% get_a_count question %}</td>
+                <td class="text-center bg-light">{% get_n_count question %}</td>
+                <td class="text-center bg-warning">{% get_sd_count question %}</td>
+                <td class="text-center bg-danger">{% get_d_count question %}</td>
+                <td class="text-center overall-score-class">{% get_overall_score question %}</td>
+              </tr>
+              {% endfor %}
+          </tbody>
+        </table>
 
       </div>
     </div>
