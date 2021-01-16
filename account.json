@@ -1,0 +1,452 @@
+[
+{
+  "model": "account.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "department": 1,
+    "level": null,
+    "profile_photo": "profile_pictures/passport.jpg"
+  }
+},
+{
+  "model": "account.profile",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "department": 3,
+    "level": null,
+    "profile_photo": ""
+  }
+},
+{
+  "model": "account.profile",
+  "pk": 3,
+  "fields": {
+    "user": 3,
+    "department": 2,
+    "level": null,
+    "profile_photo": ""
+  }
+},
+{
+  "model": "account.profile",
+  "pk": 4,
+  "fields": {
+    "user": 4,
+    "department": 1,
+    "level": 500,
+    "profile_photo": ""
+  }
+},
+{
+  "model": "account.profile",
+  "pk": 5,
+  "fields": {
+    "user": 5,
+    "department": 2,
+    "level": 500,
+    "profile_photo": ""
+  }
+},
+{
+  "model": "account.profile",
+  "pk": 6,
+  "fields": {
+    "user": 6,
+    "department": 3,
+    "level": 500,
+    "profile_photo": ""
+  }
+},
+{
+  "model": "account.profile",
+  "pk": 7,
+  "fields": {
+    "user": 7,
+    "department": 4,
+    "level": null,
+    "profile_photo": ""
+  }
+},
+{
+  "model": "account.extracourses",
+  "pk": 1,
+  "fields": {
+    "user": 6,
+    "courses": [
+      5
+    ]
+  }
+},
+{
+  "model": "account.extracourses",
+  "pk": 2,
+  "fields": {
+    "user": 4,
+    "courses": [
+      5
+    ]
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 2,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 3,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 4,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 5,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 6,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 7,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 8,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 9,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 10,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 11,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 12,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 13,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 14,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 15,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 16,
+  "fields": {
+    "user": 6,
+    "assessment": 1
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 17,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 18,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 19,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 20,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 21,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 22,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 23,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 24,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 25,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 26,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 27,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 28,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 29,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 30,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 31,
+  "fields": {
+    "user": 6,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 32,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 33,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 34,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 35,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 36,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 37,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 38,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 39,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 40,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 41,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 42,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 43,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 44,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 45,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+},
+{
+  "model": "account.assessedcourses",
+  "pk": 46,
+  "fields": {
+    "user": 4,
+    "assessment": 4
+  }
+}
+]

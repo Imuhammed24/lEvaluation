@@ -1,0 +1,1045 @@
+[
+{
+  "model": "assessment.semester",
+  "pk": 1,
+  "fields": {
+    "name": "FIRST SEMESTER",
+    "year": 2020
+  }
+},
+{
+  "model": "assessment.assessment",
+  "pk": 1,
+  "fields": {
+    "lecturer": 2,
+    "course": 3,
+    "semester": 1
+  }
+},
+{
+  "model": "assessment.assessment",
+  "pk": 2,
+  "fields": {
+    "lecturer": 1,
+    "course": 1,
+    "semester": 1
+  }
+},
+{
+  "model": "assessment.assessment",
+  "pk": 3,
+  "fields": {
+    "lecturer": 3,
+    "course": 2,
+    "semester": 1
+  }
+},
+{
+  "model": "assessment.assessment",
+  "pk": 4,
+  "fields": {
+    "lecturer": 7,
+    "course": 5,
+    "semester": 1
+  }
+},
+{
+  "model": "assessment.assessment",
+  "pk": 5,
+  "fields": {
+    "lecturer": 1,
+    "course": 4,
+    "semester": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 1,
+  "fields": {
+    "question_text": "Treated students with respect",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 2,
+  "fields": {
+    "question_text": "Treated students with respect",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 3,
+  "fields": {
+    "question_text": "Treated students with respect",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 4,
+  "fields": {
+    "question_text": "Treated students with respect",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 61,
+  "fields": {
+    "question_text": "Made students feel free to ask questions",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 62,
+  "fields": {
+    "question_text": "Was capable of answering questions",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 63,
+  "fields": {
+    "question_text": "Communicated clearly",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 64,
+  "fields": {
+    "question_text": "Assigned homework that was relevant to the course",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 65,
+  "fields": {
+    "question_text": "Gave sufficient time to complete assignments",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 66,
+  "fields": {
+    "question_text": "Gave exams that reflected the material covered in lectures",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 67,
+  "fields": {
+    "question_text": "Kept Students about the class grades and progress",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 68,
+  "fields": {
+    "question_text": "Utilized the entire allotted lecture time",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 69,
+  "fields": {
+    "question_text": "Was enthusiastic about teaching the course",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 70,
+  "fields": {
+    "question_text": "Completed the objectives outlined in the course description",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 71,
+  "fields": {
+    "question_text": "I would recommend this lecturer to continue carrying the course",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 72,
+  "fields": {
+    "question_text": "I have been able to gain more knowledge related to my field of study because of this course",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 73,
+  "fields": {
+    "question_text": "This course is relevant to my field of study",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 74,
+  "fields": {
+    "question_text": "The contents of this course are adequate",
+    "is_published": true,
+    "exam": 4
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 75,
+  "fields": {
+    "question_text": "Made students feel free to ask questions",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 76,
+  "fields": {
+    "question_text": "Was capable of answering questions",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 77,
+  "fields": {
+    "question_text": "Communicated clearly",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 78,
+  "fields": {
+    "question_text": "Assigned homework that was relevant to the course",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 79,
+  "fields": {
+    "question_text": "Gave sufficient time to complete assignments",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 80,
+  "fields": {
+    "question_text": "Gave exams that reflected the material covered in lectures",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 81,
+  "fields": {
+    "question_text": "Kept Students about the class grades and progress",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 82,
+  "fields": {
+    "question_text": "Utilized the entire allotted lecture time",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 83,
+  "fields": {
+    "question_text": "Was enthusiastic about teaching the course",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 84,
+  "fields": {
+    "question_text": "Completed the objectives outlined in the course description",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 85,
+  "fields": {
+    "question_text": "I would recommend this lecturer to continue carrying the course",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 86,
+  "fields": {
+    "question_text": "I have been able to gain more knowledge related to my field of study because of this course",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 87,
+  "fields": {
+    "question_text": "This course is relevant to my field of study",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 88,
+  "fields": {
+    "question_text": "The contents of this course are adequate",
+    "is_published": true,
+    "exam": 3
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 89,
+  "fields": {
+    "question_text": "Made students feel free to ask questions",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 90,
+  "fields": {
+    "question_text": "Was capable of answering questions",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 91,
+  "fields": {
+    "question_text": "Communicated clearly",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 92,
+  "fields": {
+    "question_text": "Assigned homework that was relevant to the course",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 93,
+  "fields": {
+    "question_text": "Gave sufficient time to complete assignments",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 94,
+  "fields": {
+    "question_text": "Gave exams that reflected the material covered in lectures",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 95,
+  "fields": {
+    "question_text": "Kept Students about the class grades and progress",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 96,
+  "fields": {
+    "question_text": "Utilized the entire allotted lecture time",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 97,
+  "fields": {
+    "question_text": "Was enthusiastic about teaching the course",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 98,
+  "fields": {
+    "question_text": "Completed the objectives outlined in the course description",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 99,
+  "fields": {
+    "question_text": "I would recommend this lecturer to continue carrying the course",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 100,
+  "fields": {
+    "question_text": "I have been able to gain more knowledge related to my field of study because of this course",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 101,
+  "fields": {
+    "question_text": "This course is relevant to my field of study",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 102,
+  "fields": {
+    "question_text": "The contents of this course are adequate",
+    "is_published": true,
+    "exam": 2
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 103,
+  "fields": {
+    "question_text": "Made students feel free to ask questions",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 104,
+  "fields": {
+    "question_text": "Was capable of answering questions",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 105,
+  "fields": {
+    "question_text": "Communicated clearly",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 106,
+  "fields": {
+    "question_text": "Assigned homework that was relevant to the course",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 107,
+  "fields": {
+    "question_text": "Gave sufficient time to complete assignments",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 108,
+  "fields": {
+    "question_text": "Gave exams that reflected the material covered in lectures",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 109,
+  "fields": {
+    "question_text": "Kept Students about the class grades and progress",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 110,
+  "fields": {
+    "question_text": "Utilized the entire allotted lecture time",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 111,
+  "fields": {
+    "question_text": "Was enthusiastic about teaching the course",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 112,
+  "fields": {
+    "question_text": "Completed the objectives outlined in the course description",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 113,
+  "fields": {
+    "question_text": "I would recommend this lecturer to continue carrying the course",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 114,
+  "fields": {
+    "question_text": "I have been able to gain more knowledge related to my field of study because of this course",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 115,
+  "fields": {
+    "question_text": "This course is relevant to my field of study",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.question",
+  "pk": 116,
+  "fields": {
+    "question_text": "The contents of this course are adequate",
+    "is_published": true,
+    "exam": 1
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 1,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 1,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 2,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 103,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 3,
+  "fields": {
+    "text": "Agree",
+    "is_valid": false,
+    "question": 104,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 4,
+  "fields": {
+    "text": "Disagree",
+    "is_valid": false,
+    "question": 105,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 5,
+  "fields": {
+    "text": "Neutral",
+    "is_valid": false,
+    "question": 106,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 6,
+  "fields": {
+    "text": "Strongly Disagree",
+    "is_valid": false,
+    "question": 107,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 7,
+  "fields": {
+    "text": "Agree",
+    "is_valid": false,
+    "question": 108,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 8,
+  "fields": {
+    "text": "Strongly Disagree",
+    "is_valid": false,
+    "question": 109,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 9,
+  "fields": {
+    "text": "Disagree",
+    "is_valid": false,
+    "question": 110,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 10,
+  "fields": {
+    "text": "Strongly Disagree",
+    "is_valid": false,
+    "question": 111,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 11,
+  "fields": {
+    "text": "Strongly Disagree",
+    "is_valid": false,
+    "question": 112,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 12,
+  "fields": {
+    "text": "Strongly Disagree",
+    "is_valid": false,
+    "question": 113,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 13,
+  "fields": {
+    "text": "Strongly Disagree",
+    "is_valid": false,
+    "question": 114,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 14,
+  "fields": {
+    "text": "Disagree",
+    "is_valid": false,
+    "question": 115,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 15,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 116,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 16,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 4,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 17,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 61,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 18,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 62,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 19,
+  "fields": {
+    "text": "Neutral",
+    "is_valid": false,
+    "question": 63,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 20,
+  "fields": {
+    "text": "Strongly Disagree",
+    "is_valid": false,
+    "question": 64,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 21,
+  "fields": {
+    "text": "Disagree",
+    "is_valid": false,
+    "question": 65,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 22,
+  "fields": {
+    "text": "Strongly Disagree",
+    "is_valid": false,
+    "question": 66,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 23,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 67,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 24,
+  "fields": {
+    "text": "Strongly Disagree",
+    "is_valid": false,
+    "question": 68,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 25,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 69,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 26,
+  "fields": {
+    "text": "Strongly Disagree",
+    "is_valid": false,
+    "question": 70,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 27,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 71,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 28,
+  "fields": {
+    "text": "Neutral",
+    "is_valid": false,
+    "question": 72,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 29,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 73,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 30,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 74,
+    "student": 6
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 31,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 4,
+    "student": 4
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 32,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 61,
+    "student": 4
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 33,
+  "fields": {
+    "text": "Strongly Disagree",
+    "is_valid": false,
+    "question": 62,
+    "student": 4
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 34,
+  "fields": {
+    "text": "Disagree",
+    "is_valid": false,
+    "question": 63,
+    "student": 4
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 35,
+  "fields": {
+    "text": "Disagree",
+    "is_valid": false,
+    "question": 64,
+    "student": 4
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 36,
+  "fields": {
+    "text": "Strongly Disagree",
+    "is_valid": false,
+    "question": 65,
+    "student": 4
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 37,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 66,
+    "student": 4
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 38,
+  "fields": {
+    "text": "Disagree",
+    "is_valid": false,
+    "question": 67,
+    "student": 4
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 39,
+  "fields": {
+    "text": "Strongly Disagree",
+    "is_valid": false,
+    "question": 68,
+    "student": 4
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 40,
+  "fields": {
+    "text": "Disagree",
+    "is_valid": false,
+    "question": 69,
+    "student": 4
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 41,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 70,
+    "student": 4
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 42,
+  "fields": {
+    "text": "Strongly Disagree",
+    "is_valid": false,
+    "question": 71,
+    "student": 4
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 43,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 72,
+    "student": 4
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 44,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 73,
+    "student": 4
+  }
+},
+{
+  "model": "assessment.answer",
+  "pk": 45,
+  "fields": {
+    "text": "Strongly Agree",
+    "is_valid": false,
+    "question": 74,
+    "student": 4
+  }
+}
+]

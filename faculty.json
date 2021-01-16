@@ -1,0 +1,155 @@
+[
+{
+  "model": "faculty.faculty",
+  "pk": 1,
+  "fields": {
+    "name": "Information and communication technology"
+  }
+},
+{
+  "model": "faculty.faculty",
+  "pk": 2,
+  "fields": {
+    "name": "Education"
+  }
+},
+{
+  "model": "faculty.department",
+  "pk": 1,
+  "fields": {
+    "name": "Cyber Security Science",
+    "faculty": 1,
+    "lecturers": [
+      1
+    ]
+  }
+},
+{
+  "model": "faculty.department",
+  "pk": 2,
+  "fields": {
+    "name": "Computer Science",
+    "faculty": 1,
+    "lecturers": [
+      3
+    ]
+  }
+},
+{
+  "model": "faculty.department",
+  "pk": 3,
+  "fields": {
+    "name": "Information and Media Technology",
+    "faculty": 1,
+    "lecturers": [
+      2
+    ]
+  }
+},
+{
+  "model": "faculty.department",
+  "pk": 4,
+  "fields": {
+    "name": "Maths",
+    "faculty": 2,
+    "lecturers": [
+      7
+    ]
+  }
+},
+{
+  "model": "faculty.department",
+  "pk": 5,
+  "fields": {
+    "name": "General Studies",
+    "faculty": 2,
+    "lecturers": [
+      3
+    ]
+  }
+},
+{
+  "model": "faculty.course",
+  "pk": 1,
+  "fields": {
+    "title": "CYBERSECURITY",
+    "code": "CSS 512",
+    "lecturer": 1,
+    "department_owned": 1,
+    "level_offering": 500,
+    "departments_offering": [
+      1
+    ]
+  }
+},
+{
+  "model": "faculty.course",
+  "pk": 2,
+  "fields": {
+    "title": "COMPUTER SCIENCE",
+    "code": "CPT 511",
+    "lecturer": 3,
+    "department_owned": 2,
+    "level_offering": 500,
+    "departments_offering": [
+      2
+    ]
+  }
+},
+{
+  "model": "faculty.course",
+  "pk": 3,
+  "fields": {
+    "title": "MEDIA TECHNOLOGY",
+    "code": "IMT 511",
+    "lecturer": 2,
+    "department_owned": 3,
+    "level_offering": 500,
+    "departments_offering": [
+      3
+    ]
+  }
+},
+{
+  "model": "faculty.course",
+  "pk": 4,
+  "fields": {
+    "title": "GENERAL STUDIES",
+    "code": "GST 511",
+    "lecturer": 1,
+    "department_owned": 5,
+    "level_offering": 500,
+    "departments_offering": [
+      3,
+      2,
+      1
+    ]
+  }
+},
+{
+  "model": "faculty.course",
+  "pk": 5,
+  "fields": {
+    "title": "MATHEMATICS",
+    "code": "MAT 415",
+    "lecturer": 7,
+    "department_owned": 4,
+    "level_offering": 400,
+    "departments_offering": [
+      3,
+      2,
+      1,
+      4
+    ]
+  }
+},
+{
+  "model": "faculty.currentsemester",
+  "pk": 1,
+  "fields": {
+    "faculty": 1,
+    "name": "FIRST SEMESTER",
+    "year": 2020
+  }
+}
+]
