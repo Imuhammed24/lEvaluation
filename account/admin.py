@@ -9,7 +9,7 @@ class ProfileInline(admin.TabularInline):
 
 
 class UserAdmin(AuthUserAdmin):
-    list_display = ['id', 'first_name', 'last_name', 'email']
+    list_display = ['id', 'first_name', 'last_name', 'email', 'is_staff', 'is_superuser']
     inlines = [ProfileInline]
 
 

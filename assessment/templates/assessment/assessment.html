@@ -16,7 +16,7 @@
 <h3 class="font-weight-bold"><span class="text-primary">WELCOME!</span> You are evaluating; <span style="text-decoration: underline">{{assessment.lecturer.first_name.title}} {{assessment.lecturer.last_name.title}}</span></h3>
 <hr>
 <div>
-    {% if questions %}
+    {% if assessment.questions %}
     <form class="ml-5" method="post" action="{% url 'assessment:add_answers' assessment.id %}">
     {% csrf_token %}
     {% for question in assessment.questions.all %}
