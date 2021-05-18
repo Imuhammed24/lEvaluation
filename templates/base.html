@@ -55,13 +55,13 @@
         if (all_overall_performance[i].textContent === 'good'){
             all_overall_performance[i].classList.add('bg-success');
         }
-        if (all_overall_performance[i].textContent === 'neutral'){
+        else if (all_overall_performance[i].textContent === 'neutral'){
             all_overall_performance[i].classList.add('bg-light');
         }
-        if (all_overall_performance[i].textContent === 'poor'){
+        else if (all_overall_performance[i].textContent === 'poor'){
             all_overall_performance[i].classList.add('bg-danger');
         }
-        if (all_overall_performance[i].textContent === 'Not yet assessed'){
+        else {
             let btn_class = 'btn_after_overall_performance';
             let id = all_overall_performance[i].id;
             document.getElementById(btn_class.concat(id)).classList.add('disabled');
