@@ -18,7 +18,7 @@ class ViewAdmin(ImportExportModelAdmin):
 
 @admin.register(Question)
 class ViewAdmin(ImportExportModelAdmin):
-    list_display = ['question_text', 'is_published', 'exam']
+    list_display = ['question_text', 'is_published', 'course']
 
 
 @admin.register(Answer)
