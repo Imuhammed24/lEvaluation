@@ -1,14 +1,13 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-
 LEVEL = (
-        (100, '100'),
-        (200, '200'),
-        (300, '300'),
-        (400, '400'),
-        (500, '500'),
-    )
+    (100, '100'),
+    (200, '200'),
+    (300, '300'),
+    (400, '400'),
+    (500, '500'),
+)
 
 SEMESTER = (
     ('FIRST SEMESTER', 'FIRST SEMESTER'),
@@ -18,6 +17,7 @@ SEMESTER = (
 
 class Faculty(models.Model):
     name = models.CharField(max_length=40)
+
     # departments = models.ManyToManyField(Department, blank=True, related_name='faculty')
 
     def __str__(self):
@@ -39,11 +39,10 @@ class Department(models.Model):
 class Course(models.Model):
     title = models.CharField(max_length=30)
     code = models.CharField(max_length=10, null=True, blank=True)
-    lecturer = models.ForeignKey(User,
-                                 on_delete=models.CASCADE,
-                                 null=True,
-                                 related_name='courses',
-                                 limit_choices_to={'is_staff': True})
+    lecturer = models.ManyToManyField(User,
+                                      # null=True,
+                                      related_name='courses',
+                                      limit_choices_to={'is_staff': True})
     departments_offering = models.ManyToManyField(Department, blank=True, related_name='courses')
     department_owned = models.ForeignKey(Department,
                                          null=True,

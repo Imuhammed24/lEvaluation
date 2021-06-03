@@ -3,6 +3,12 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import index
 
+
+admin.site.site_header = "ADMINISTRATION BACK-END"
+admin.site.site_title = "Admin Portal"
+admin.site.index_title = "Welcome to your portal"
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
