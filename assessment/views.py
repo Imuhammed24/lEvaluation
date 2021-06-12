@@ -26,7 +26,7 @@ def add_answers_view(request, assessment_id):
         for count, item in enumerate(request.POST):
             if count > 0:
                 question_id = item
-                question = Question.objects.get(id=question_id, exam=assessment)
+                question = Question.objects.get(id=question_id, course=assessment)
                 answer = Answer(text=request.POST.get(item), question=question, student=request.user)
                 answer.save()
                 confirm_assessment = AssessedCourses(user=request.user, assessment=assessment)
@@ -41,7 +41,7 @@ def lecturer_result_view(request, course_id, semester_id):
     semester = CurrentSemester.objects.get(id=semester_id)
     real_semester = Semester.objects.get(name=semester.name, year=semester.year)
     assessment = Assessment.objects.get(lecturer=course.lecturer, course=course, semester=real_semester)
-    questions = Question.objects.filter(exam=assessment)
+    questions = Question.objects.filter(course=assessment)
 
     context = {
         'section': 'lecturer_result_view',

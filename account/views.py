@@ -39,15 +39,15 @@ def login_view(request):
 
 @login_required
 def home_view(request):
-    assessed_courses = []
+    assessed_lecturers = []
     context = {
         'display_section': 'Dashboard',
-        'assessed_courses': assessed_courses,
+        'assessed_lecturers': assessed_lecturers,
     }
     # test = Course.objects.get(level_offering=500)
     # print([test.name for test in test.departments_offering.all()])
     for assessment in request.user.assessed_courses.all():
-        assessed_courses.append(assessment.assessment.course)
+        assessed_lecturers.append(assessment.assessment.lecturer)
 
     if not request.user.is_staff:
         # user_profile = Profile.objects.get(user=request.user)
