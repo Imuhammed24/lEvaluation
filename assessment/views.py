@@ -40,9 +40,10 @@ def lecturer_result_view(request, course_id, semester_id):
     course = Course.objects.get(id=course_id)
     semester = CurrentSemester.objects.get(id=semester_id)
     real_semester = Semester.objects.get(name=semester.name, year=semester.year)
-    try:
+    if Assessment.objects.filter(lecturer=course.lecturer, course=course, semester=real_semester).count > 0:
         assessment = Assessment.objects.get(lecturer=course.lecturer, course=course, semester=real_semester)
-    except:
+    else:
+        messages.error(request, 'no assessment uploaded for lecturer yet')
         return redirect('account:home')
     questions = Question.objects.filter(course=assessment)
 
