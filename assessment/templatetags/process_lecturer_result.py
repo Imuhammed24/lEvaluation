@@ -10,6 +10,7 @@ def get_sa_count(question):
     answers_list = [answer for answer in question.answers.all() if answer.text == 'Strongly Agree']
     total_answer_count = question.answers.all().count()
     percentage = (len(answers_list)/total_answer_count)*100
+    percentage = round(percentage, 2)
     return f'{percentage}%'
 
 
@@ -18,6 +19,7 @@ def get_a_count(question):
     answers_list = [answer for answer in question.answers.all() if answer.text == 'Agree' ]
     total_answer_count = question.answers.all().count()
     percentage = (len(answers_list) / total_answer_count) * 100
+    percentage = round(percentage, 2)
     return f'{percentage}%'
 
 
@@ -26,6 +28,7 @@ def get_n_count(question):
     answers_list = [answer for answer in question.answers.all() if answer.text == 'Neutral' ]
     total_answer_count = question.answers.all().count()
     percentage = (len(answers_list) / total_answer_count) * 100
+    percentage = round(percentage, 2)
     return f'{percentage}%'
 
 
@@ -34,6 +37,7 @@ def get_d_count(question):
     answers_list = [answer for answer in question.answers.all() if answer.text == 'Disagree' ]
     total_answer_count = question.answers.all().count()
     percentage = (len(answers_list) / total_answer_count) * 100
+    percentage = round(percentage, 2)
     return f'{percentage}%'
 
 
@@ -42,6 +46,7 @@ def get_sd_count(question):
     answers_list = [answer for answer in question.answers.all() if answer.text == 'Strongly Disagree' ]
     total_answer_count = question.answers.all().count()
     percentage = (len(answers_list) / total_answer_count) * 100
+    percentage = round(percentage, 2)
     return f'{percentage}%'
 
 
