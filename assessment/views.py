@@ -36,12 +36,13 @@ def add_answers_view(request, assessment_id):
     return redirect('account:home')
 
 
-def lecturer_result_view(request, course_id, semester_id):
+def lecturer_result_view(request, course_id, semester_id, lecturer_id):
     course = Course.objects.get(id=course_id)
     semester = CurrentSemester.objects.get(id=semester_id)
+    lecturer = User.objects.get(id=lecturer_id)
     real_semester = Semester.objects.get(name=semester.name, year=semester.year)
-    if Assessment.objects.filter(lecturer=course.lecturer, course=course, semester=real_semester).count > 0:
-        assessment = Assessment.objects.get(lecturer=course.lecturer, course=course, semester=real_semester)
+    if Assessment.objects.filter(lecturer=lecturer, course=course, semester=real_semester).count() > 0:
+        assessment = Assessment.objects.get(lecturer=lecturer, course=course, semester=real_semester)
     else:
         messages.error(request, 'no assessment uploaded for lecturer yet')
         return redirect('account:home')

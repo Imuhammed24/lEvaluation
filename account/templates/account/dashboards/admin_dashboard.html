@@ -64,15 +64,17 @@
                           </thead>
                           <tbody>
                           {% for course in department.department_courses.all %}
+                          {% for lecturer in course.lecturer.all %}
                             <tr>
                               <th scope="row">{{forloop.counter}}</th>
-                              <td>{{course.lecturer.first_name.title}} {{course.lecturer.last_name.title}}</td>
+                              <td>{{lecturer.first_name.title}} {{lecturer.last_name.title}}</td>
                               <td>{{course.title.title}}</td>
                               <td>{{course.code.upper}}</td>
                               <td>{{ request.user.profile.department.faculty.current_semester.first }}</td>
-                              <td id="{{course.id}}" class="overall_performance_container">{% get_lecturer_performance course request.user.profile.department.faculty.current_semester.first %}</td>
-                              <td><a id="btn_after_overall_performance{{course.id}}" class="btn btn-primary" href="{% url 'assessment:lecturer_result_view' course.id request.user.profile.department.faculty.current_semester.first.id %}">View Detail</a></td>
+                              <td id="{{course.id}}/{{lecturer.id}}" class="overall_performance_container">{% get_lecturer_performance course lecturer request.user.profile.department.faculty.current_semester.first %}</td>
+                              <td><a id="btn_after_overall_performance{{course.id}}/{{lecturer.id}}" class="btn btn-primary" href="{% url 'assessment:lecturer_result_view' course.id request.user.profile.department.faculty.current_semester.first.id lecturer.id %}">View Detail</a></td>
                             </tr>
+                          {% endfor %}
                           {% endfor %}
                           </tbody>
                         </table>

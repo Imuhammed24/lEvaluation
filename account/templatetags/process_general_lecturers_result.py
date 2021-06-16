@@ -7,13 +7,13 @@ register = template.Library()
 
 
 @register.simple_tag()
-def get_lecturer_performance(course, semester):
+def get_lecturer_performance(course, lecturer, semester):
     strongly_agree_count, agree_count, neutral_count, strongly_disagree_count, disagree_count = 0,0,0,0,0
     total_assessment_count = 0
     performance = None
 
     assessment_semester = Semester.objects.get(name=semester.name, year=semester.year)
-    assessment = Assessment.objects.filter(course=course, semester=assessment_semester, lecturer=course.lecturer).first()
+    assessment = Assessment.objects.filter(course=course, semester=assessment_semester, lecturer=lecturer).first()
 
     if assessment:
         questions = assessment.questions.all()
@@ -52,3 +52,5 @@ def get_lecturer_performance(course, semester):
 
         else:
             return 'Not yet assessed'
+    else:
+        return 'No assessment yet'
