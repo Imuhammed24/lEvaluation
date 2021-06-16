@@ -96,7 +96,7 @@ def get_lecturer_performance_num(course, lecturer, semester):
                     (percentage_sa + percentage_a == percentage_sd + percentage_d):
                 performance = 50
             else:
-                performance = 100
+                performance = 10
 
             return performance
 
