@@ -47,10 +47,43 @@
 
                 <ul>
                     {% for department in faculty.departments.all %}
-                    <li>
+                    <li class="mb-120">
+                        <h3 class="font-weight-bold text-dark" style="caption-side: top">{{ department.name.title }}</h3>
+                        <div>
+                          <canvas id="myChart{{department.id}}/{{forloop.counter}}"></canvas>
+                        </div>
 
-                        <table class="table table-hover table-bordered table-dark">
-                            <caption class="font-weight-bold text-dark" style="caption-side: top">{{ department.name.title }}</caption>
+                        <script>
+                            var ctx = document.getElementById('myChart{{department.id}}/{{forloop.counter}}');
+                            var myChart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                                    labels: [{% for course in department.department_courses.all %}{% for lecturer in course.lecturer.all %}'{{lecturer.first_name}}',{% endfor %}{% endfor %}],
+                                    datasets: [{
+                                        label: 'Level of performance (Percentage)',
+                                        // data: [12, 19, 3, 5, 2, 3],
+                                        data: [{% for course in department.department_courses.all %}{% for lecturer in course.lecturer.all %} {% get_lecturer_performance_num course lecturer request.user.profile.department.faculty.current_semester.first %},{% endfor %}{% endfor %}],
+                                        backgroundColor: [
+                                            'rgba(0,123,255,0.69)'
+                                        ],
+                                        borderColor: [
+                                            '#007BFF'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+                        </script>
+
+                        <table class="table table-hover table-bordered">
                           <thead>
                             <tr>
                               <th scope="col">#</th>
@@ -86,4 +119,5 @@
         </div>
     </div>
 </section>
+
 {% endblock %}

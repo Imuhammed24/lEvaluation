@@ -54,3 +54,53 @@ def get_lecturer_performance(course, lecturer, semester):
             return 'Not yet assessed'
     else:
         return 'No assessment yet'
+
+
+@register.simple_tag()
+def get_lecturer_performance_num(course, lecturer, semester):
+    strongly_agree_count, agree_count, neutral_count, strongly_disagree_count, disagree_count = 0,0,0,0,0
+    total_assessment_count = 0
+    performance = None
+
+    assessment_semester = Semester.objects.get(name=semester.name, year=semester.year)
+    assessment = Assessment.objects.filter(course=course, semester=assessment_semester, lecturer=lecturer).first()
+
+    if assessment:
+        questions = assessment.questions.all()
+
+        for question in questions:
+            for answer in question.answers.all():
+                total_assessment_count += 1
+                if answer.text == 'Strongly Agree':
+                    strongly_agree_count += 1
+                elif answer.text == 'Agree':
+                    agree_count += 1
+                elif answer.text == 'Neutral':
+                    neutral_count += 1
+                elif answer.text == 'Disagree':
+                    disagree_count += 1
+                elif answer.text == 'Strongly Disagree':
+                    strongly_disagree_count += 1
+
+        if not total_assessment_count == 0:
+            percentage_sa = (strongly_agree_count / total_assessment_count) * 100
+            percentage_a = (agree_count / total_assessment_count) * 100
+            percentage_n = (neutral_count / total_assessment_count) * 100
+            percentage_d = (disagree_count / total_assessment_count) * 100
+            percentage_sd = (strongly_disagree_count / total_assessment_count) * 100
+
+            if percentage_sa + percentage_a > percentage_sd + percentage_d:
+                performance = 100
+            elif (percentage_n > percentage_sa+percentage_a) or\
+                    (percentage_n > percentage_sd + percentage_d) or\
+                    (percentage_sa + percentage_a == percentage_sd + percentage_d):
+                performance = 50
+            else:
+                performance = 100
+
+            return performance
+
+        else:
+            return 0
+    else:
+        return 0
