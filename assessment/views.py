@@ -53,5 +53,6 @@ def lecturer_result_view(request, course_id, semester_id, lecturer_id):
         'course': course,
         'questions': questions,
         'assessment': assessment,
+        'lecturer': lecturer,
     }
     return render(request, 'assessment/lecturer_assessment_result.html', context=context)

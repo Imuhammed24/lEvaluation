@@ -40,7 +40,7 @@
 
 {% block body_section_section %}
 <section class="wrapper">
-<h3 class="font-weight-bold course-in-result d-inline p-2" style="">Course: <span class="text-primary">{{course.code}}</span></h3>
+<h3 class="font-weight-bold course-in-result d-inline p-2" style="">Course: <span class="text-primary">{{course.code}}</span> <small>by {{lecturer.profile.title.title}} {{lecturer.first_name.title}} {{lecturer.last_name.title}}</small></h3>
 <div class="row">
   <div class="col-lg-11 mt-3 main-chart">
     {% if request.user.is_staff %}
