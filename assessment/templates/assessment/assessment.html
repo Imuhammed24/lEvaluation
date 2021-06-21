@@ -26,19 +26,19 @@
                 <h4><span class="mr-5">{{forloop.counter}}.</span>{{ question.question_text }}?</h4>
                 <div class="ml-5">
                     <input class="ml-3" type="radio" id="question-{{forloop.counter}}-SA" name="{{question.id}}"
-                           value="Strongly Agree">
+                           value="Strongly Agree" required>
                     <label for="question-{{forloop.counter}}-SA"> Strongly Agree</label><br>
                     <input class="ml-3" type="radio" id="question-{{forloop.counter}}-A" name="{{question.id}}"
-                           value="Agree">
+                           value="Agree" required>
                     <label for="question-{{forloop.counter}}-A"> Agree</label><br>
                     <input class="ml-3" type="radio" id="question-{{forloop.counter}}-N" name="{{question.id}}"
-                           value="Neutral">
+                           value="Neutral" required>
                     <label for="question-{{forloop.counter}}-N"> Neutral</label><br>
                     <input class="ml-3" type="radio" id="question-{{forloop.counter}}-D" name="{{question.id}}"
-                           value="Disagree">
+                           value="Disagree" required>
                     <label for="question-{{forloop.counter}}-D"> Disagree</label><br>
                     <input class="ml-3" type="radio" id="question-{{forloop.counter}}-SD" name="{{question.id}}"
-                           value="Strongly Disagree">
+                           value="Strongly Disagree" required>
                     <label for="question-{{forloop.counter}}-SD"> Strongly Disagree</label><br>
                 </div>
             </div>
