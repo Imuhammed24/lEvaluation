@@ -2,46 +2,53 @@
 {% load static %}
 
 {% block aside_list_li %}
-    <li class="mt">
+<li class="mt">
     <a class="active" href="{% url 'account:home' %}">
-      <i class="fa fa-dashboard"></i>
-      <span>Dashboard</span>
-      </a>
-    </li>
+        <i class="fa fa-dashboard"></i>
+        <span>Dashboard</span>
+    </a>
+</li>
 {% endblock %}
 
 
 {% block body_section_section %}
 <section class="wrapper">
-<h3 class="font-weight-bold"><span class="text-primary">WELCOME!</span> You are evaluating; <span style="text-decoration: underline">{{assessment.lecturer.first_name.title}} {{assessment.lecturer.last_name.title}}</span></h3>
-<hr>
-<div>
-    {% if assessment.questions.count > 0 %}
-    <form class="ml-5" method="post" action="{% url 'assessment:add_answers' assessment.id %}">
-    {% csrf_token %}
-    {% for question in assessment.questions.all %}
-    <div class="mb-5">
-        <h4><span class="mr-5">{{forloop.counter}}.</span>{{ question.question_text }}?</h4>
-        <div class="ml-5">
-          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-SA" name="{{question.id}}" value="Strongly Agree">
-          <label for="question-{{forloop.counter}}-SA"> Strongly Agree</label><br>
-          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-A" name="{{question.id}}" value="Agree">
-          <label for="question-{{forloop.counter}}-A"> Agree</label><br>
-          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-N" name="{{question.id}}" value="Neutral">
-          <label for="question-{{forloop.counter}}-N"> Neutral</label><br>
-          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-D" name="{{question.id}}" value="Disagree">
-          <label for="question-{{forloop.counter}}-D"> Disagree</label><br>
-          <input class="ml-3" type="checkbox" id="question-{{forloop.counter}}-SD" name="{{question.id}}" value="Strongly Disagree">
-          <label for="question-{{forloop.counter}}-SD"> Strongly Disagree</label><br>
-        </div>
+    <h3 class="font-weight-bold"><span class="text-primary">WELCOME!</span> You are evaluating; <span
+            style="text-decoration: underline">{{assessment.lecturer.first_name.title}} {{assessment.lecturer.last_name.title}}</span>
+    </h3>
+    <hr>
+    <div>
+        {% if assessment.questions.count > 0 %}
+        <form class="ml-5" method="post" action="{% url 'assessment:add_answers' assessment.id %}">
+            {% csrf_token %}
+            {% for question in assessment.questions.all %}
+            <div class="mb-5">
+                <h4><span class="mr-5">{{forloop.counter}}.</span>{{ question.question_text }}?</h4>
+                <div class="ml-5">
+                    <input class="ml-3" type="radio" id="question-{{forloop.counter}}-SA" name="{{question.id}}"
+                           value="Strongly Agree">
+                    <label for="question-{{forloop.counter}}-SA"> Strongly Agree</label><br>
+                    <input class="ml-3" type="radio" id="question-{{forloop.counter}}-A" name="{{question.id}}"
+                           value="Agree">
+                    <label for="question-{{forloop.counter}}-A"> Agree</label><br>
+                    <input class="ml-3" type="radio" id="question-{{forloop.counter}}-N" name="{{question.id}}"
+                           value="Neutral">
+                    <label for="question-{{forloop.counter}}-N"> Neutral</label><br>
+                    <input class="ml-3" type="radio" id="question-{{forloop.counter}}-D" name="{{question.id}}"
+                           value="Disagree">
+                    <label for="question-{{forloop.counter}}-D"> Disagree</label><br>
+                    <input class="ml-3" type="radio" id="question-{{forloop.counter}}-SD" name="{{question.id}}"
+                           value="Strongly Disagree">
+                    <label for="question-{{forloop.counter}}-SD"> Strongly Disagree</label><br>
+                </div>
+            </div>
+            {% endfor %}
+            <input class="d-block btn btn-success" type="submit" value="Submit">
+        </form>
+        {% else %}
+        <p>No Questions uploaded yet, please check later</p>
+        {% endif %}
     </div>
-    {% endfor %}
-        <input class="d-block btn btn-success" type="submit" value="Submit">
-    </form>
-    {% else %}
-    <p>No Questions uploaded yet, please check later</p>
-    {% endif %}
-</div>
-  <!-- /col-lg-9 END SECTION MIDDLE -->
+    <!-- /col-lg-9 END SECTION MIDDLE -->
 </section>
 {% endblock %}
