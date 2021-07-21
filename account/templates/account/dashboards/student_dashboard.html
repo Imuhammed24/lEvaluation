@@ -80,17 +80,17 @@
           <h3>Extra Courses ({{request.user.extra_courses.courses.count}})</h3>
         </div>
         {% with courses=request.user.extra_courses %}
-        {% for course in courses.courses.all %}
-        {% for lecturer in course.lecturer.all %}
+        {% for extra_course in courses.courses.all %}
+        {% for lecturer in extra_course.lecturer.all %}
           <div class="mr-3">
             <div class="card p-2" style="width: 18rem;">
               <img src="{% if course.lecturer.profile.profile_photo %}{{ course.lecturer.profile.profile_photo.url }}{% else %}{% static 'img/default_profile_img.svg' %}{% endif %}" height="120px" width="120px" class="card-img-top" alt="...">
               <div class="card-body">
                 <center>
                 <h5 class="card-title font-weight-bold">{{ lecturer.first_name }} {{ lecturer.last_name }}</h5>
-                <p class="">{{ course.title }}</p>
-                <small class="d-block mb-1">{{course.code}} <span class="text-success"></span></small>
-                <a href="{% url 'assessment:evaluate' lecturer.id course.id request.user.profile.department.faculty.current_semester.first.id %}" class="btn btn-dark text-white">Evaluate</a>
+                <p class="">{{ extra_course.title }}</p>
+                <small class="d-block mb-1">{{extra_course.code}} <span class="text-success"></span></small>
+                <a href="{% url 'assessment:evaluate' lecturer.id extra_course.id request.user.profile.department.faculty.current_semester.first.id %}" class="btn btn-dark text-white">Evaluate</a>
                 </center>
               </div>
             </div>
