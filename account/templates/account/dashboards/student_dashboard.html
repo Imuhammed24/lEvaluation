@@ -1,5 +1,6 @@
 {% extends 'account/account_base.html' %}
 {% load static %}
+{% load check_if_assessed %}
 
 {% block aside_list_li %}
     <li class="mt">
@@ -8,30 +9,6 @@
       <span>Dashboard</span>
       </a>
     </li>
-<!--    <li class="sub-menu">-->
-<!--    <a href="javascript:;">-->
-<!--      <i class="fa fa-desktop"></i>-->
-<!--      <span>Previous Assessment</span>-->
-<!--      </a>-->
-<!--    </li>-->
-<!--    <li class="sub-menu">-->
-<!--    <a href="javascript:;">-->
-<!--      <i class="fa fa-cogs"></i>-->
-<!--      <span>Report</span>-->
-<!--      </a>-->
-<!--    </li>-->
-<!--    <li class="sub-menu">-->
-<!--    <a href="javascript:;">-->
-<!--      <i class="fa fa-book"></i>-->
-<!--      <span>Results</span>-->
-<!--      </a>-->
-<!--    </li>-->
-<!--    <li class="sub-menu">-->
-<!--    <a href="javascript:;">-->
-<!--      <i class="fa fa-tasks"></i>-->
-<!--      <span>Information</span>-->
-<!--      </a>-->
-<!--    </li>-->
 {% endblock %}
 
 
@@ -62,8 +39,8 @@
                 <center>
                 <h5 class="card-title font-weight-bold">{{ lecturer.first_name }} {{ lecturer.last_name }}</h5>
                 <p class="">{{course.title}}</p>
-                <small class="d-block mb-1">{{course.code}} <span class="text-success">{% if lecturer in assessed_lecturers %}(Evaluated){% endif %}</span></small>
-                <a href="{% url 'assessment:evaluate' lecturer.id course.id request.user.profile.department.faculty.current_semester.first.id %}" class="btn btn-dark {% if lecturer in assessed_lecturers %}disabled{% endif %} text-white">Evaluate</a>
+                <small class="d-block mb-1">{{course.code}} <span class="text-success">{% check_assessed_status request.user course lecturer request.user.profile.department.faculty.current_semester.first.id %}</span></small>
+                <a href="{% url 'assessment:evaluate' lecturer.id course.id request.user.profile.department.faculty.current_semester.first.id %}" class="btn btn-dark {% check_assessed_status_for_disable  request.user course lecturer request.user.profile.department.faculty.current_semester.first.id %} text-white">Evaluate</a>
                 </center>
               </div>
             </div>
@@ -89,8 +66,8 @@
                 <center>
                 <h5 class="card-title font-weight-bold">{{ lecturer.first_name }} {{ lecturer.last_name }}</h5>
                 <p class="">{{ extra_course.title }}</p>
-                <small class="d-block mb-1">{{extra_course.code}} <span class="text-success"></span></small>
-                <a href="{% url 'assessment:evaluate' lecturer.id extra_course.id request.user.profile.department.faculty.current_semester.first.id %}" class="btn btn-dark text-white">Evaluate</a>
+                <small class="d-block mb-1">{{extra_course.code}} <span class="text-success">{% check_assessed_status request.user extra_course lecturer request.user.profile.department.faculty.current_semester.first.id %}</span></small>
+                <a href="{% url 'assessment:evaluate' lecturer.id extra_course.id request.user.profile.department.faculty.current_semester.first.id %}" class="btn btn-dark {% check_assessed_status_for_disable  request.user extra_course lecturer request.user.profile.department.faculty.current_semester.first.id %} text-white">Evaluate</a>
                 </center>
               </div>
             </div>
